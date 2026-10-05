@@ -208,6 +208,9 @@
         },
         {
             "m_Id": "93135829f57a4eaeb72bb663f1447935"
+        },
+        {
+            "m_Id": "8cc5b22e7bb444cc9874fa4780ff2556"
         }
     ],
     "m_StickyNoteDatas": [],
@@ -963,7 +966,7 @@
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "02408441344b4fa784a0c682664eea53",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "8cc5b22e7bb444cc9874fa4780ff2556"
     },
     "m_Name": "Property",
     "m_DrawState": {
@@ -1129,7 +1132,7 @@
     "m_Type": "UnityEditor.ShaderGraph.FresnelNode",
     "m_ObjectId": "0577b5d650994ab4a169ab6ddd142c58",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "8cc5b22e7bb444cc9874fa4780ff2556"
     },
     "m_Name": "Fresnel Effect",
     "m_DrawState": {
@@ -2065,7 +2068,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Alpha",
     "m_StageCapability": 2,
-    "m_Value": 1.0,
+    "m_Value": 0.75,
     "m_DefaultValue": 1.0,
     "m_Labels": [],
     "m_LiteralMode": false
@@ -2304,7 +2307,7 @@
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "40f705858d0e45c3b95a099aeb99e800",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "8cc5b22e7bb444cc9874fa4780ff2556"
     },
     "m_Name": "Property",
     "m_DrawState": {
@@ -2738,7 +2741,7 @@
     "m_Title": "ScrollingTexture",
     "m_Position": {
         "x": -243.199951171875,
-        "y": -1214.4000244140625
+        "y": -1214.400146484375
     }
 }
 
@@ -2937,7 +2940,7 @@
     "m_ObjectId": "658731d0efaf4902a20a1d38a6527add",
     "m_Title": "SurfaceMovement",
     "m_Position": {
-        "x": -132.00035095214845,
+        "x": -131.999755859375,
         "y": -2184.7998046875
     }
 }
@@ -3209,7 +3212,7 @@
     "m_Type": "UnityEditor.ShaderGraph.PowerNode",
     "m_ObjectId": "73a78a0348a741d2b24eae7a409562cf",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "8cc5b22e7bb444cc9874fa4780ff2556"
     },
     "m_Name": "Power",
     "m_DrawState": {
@@ -3893,6 +3896,17 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.GroupData",
+    "m_ObjectId": "8cc5b22e7bb444cc9874fa4780ff2556",
+    "m_Title": "Fresnel Rim Effect",
+    "m_Position": {
+        "x": 791.2001953125,
+        "y": 599.199951171875
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.SamplerStateMaterialSlot",
     "m_ObjectId": "8d65bd134f894fd783d31e3a298e219b",
     "m_Id": 3,
@@ -4199,7 +4213,7 @@
     "m_ObjectId": "93135829f57a4eaeb72bb663f1447935",
     "m_Title": "DistortionEffect",
     "m_Position": {
-        "x": -580.800048828125,
+        "x": -580.7998046875,
         "y": -204.79998779296876
     }
 }
@@ -4608,7 +4622,7 @@
     "m_Type": "UnityEditor.ShaderGraph.MultiplyNode",
     "m_ObjectId": "a40eda4984f04debac95cef4887137a5",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "8cc5b22e7bb444cc9874fa4780ff2556"
     },
     "m_Name": "Multiply",
     "m_DrawState": {
@@ -5358,7 +5372,7 @@
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "bfbb68660cbf4a84b94ef5ea060b694f",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "8cc5b22e7bb444cc9874fa4780ff2556"
     },
     "m_Name": "Property",
     "m_DrawState": {

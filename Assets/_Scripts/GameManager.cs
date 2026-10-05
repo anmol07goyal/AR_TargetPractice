@@ -15,8 +15,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private ARPlaneManager planeManager;
 
-    [SerializeField] private GameObject fireBtn;
-    [SerializeField] private GameObject crosshair;
+    [SerializeField] private GameObject gameplayPanel, mainMenuPanel;
 
     #endregion
 
@@ -31,18 +30,29 @@ public class GameManager : MonoBehaviour
 
         if (planeManager == null)
             planeManager = FindAnyObjectByType<ARPlaneManager>();
+
+        ResetGame();
     }
 
-    private void Start()
+    private void ResetGame()
     {
-        crosshair.SetActive(false);
+        mainMenuPanel.SetActive(true);
+        gameplayPanel.SetActive(false);
+        StopPlaneDetection();
+    }
+
+    public void OnStartGame()
+    {
+        mainMenuPanel.SetActive(false);
+
+        if (planeManager != null) 
+            planeManager.enabled = true;
     }
 
     public void ArenaStable()
     {
         StopPlaneDetection();
-        fireBtn.SetActive(true);
-        crosshair.SetActive(true);
+        gameplayPanel.SetActive(true);
     }
 
     private void StopPlaneDetection()
@@ -68,7 +78,6 @@ public class GameManager : MonoBehaviour
 
     private void GameEnd()
     {
-        fireBtn.SetActive(false);
-        crosshair.SetActive(false);
+        gameplayPanel.SetActive(false);
     }
 }
