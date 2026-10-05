@@ -14,6 +14,9 @@ public class MovingTarget : MonoBehaviour
     [SerializeField] private float speed = 2.0f;
     [SerializeField] private float distance = 0.4f; // Max travel distance from start
 
+    [Header("Particle Data")]
+    [SerializeField] private GameObject particleHolder;
+
     private Vector3 originPosition;
     private float randomOffset;
     private Camera mainCam;
@@ -59,27 +62,19 @@ public class MovingTarget : MonoBehaviour
         }
 
         transform.LookAt(mainCam.transform.position, Vector3.up);
-        //LookAtCamera();
-    }
-
-    private void LookAtCamera()
-    {
-        // Make the target face the camera/player
-        /*
-        if (mainCam != null)
-        {
-            Vector3 directionToCamera = mainCam.transform.position - transform.position;
-            directionToCamera.y = 0; // Keep only horizontal rotation
-            if (directionToCamera.sqrMagnitude > 0.001f)
-            {
-                Quaternion targetRotation = Quaternion.LookRotation(directionToCamera);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
-            }
-        }*/
     }
 
     public void StopMoving()
     {
         enabled = false;
+    }
+
+    public void ShowParticles()
+    {
+        if (particleHolder)
+        {
+            particleHolder.SetActive(true);
+        }
+        Destroy(gameObject, 0.05f);
     }
 }

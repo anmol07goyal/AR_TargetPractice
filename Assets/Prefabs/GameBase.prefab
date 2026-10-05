@@ -436,6 +436,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3324198313702594230}
     m_Modifications:
+    - target: {fileID: 1375948406800610896, guid: 7d0d79e6fac427040995492c06c9a841, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375948406800610896, guid: 7d0d79e6fac427040995492c06c9a841, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375948406800610896, guid: 7d0d79e6fac427040995492c06c9a841, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375948406800610896, guid: 7d0d79e6fac427040995492c06c9a841, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5319453296586311802, guid: 7d0d79e6fac427040995492c06c9a841, type: 3}
+      propertyPath: pattern
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7628588319347601840, guid: 7d0d79e6fac427040995492c06c9a841, type: 3}
       propertyPath: m_Name
       value: targetSphere (2)
@@ -1272,6 +1292,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3324198313702594230}
     m_Modifications:
+    - target: {fileID: 1375948406800610896, guid: 7d0d79e6fac427040995492c06c9a841, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375948406800610896, guid: 7d0d79e6fac427040995492c06c9a841, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375948406800610896, guid: 7d0d79e6fac427040995492c06c9a841, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375948406800610896, guid: 7d0d79e6fac427040995492c06c9a841, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988384201779489801, guid: 7d0d79e6fac427040995492c06c9a841, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7628588319347601840, guid: 7d0d79e6fac427040995492c06c9a841, type: 3}
       propertyPath: m_Name
       value: targetSphere
@@ -1346,6 +1386,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3324198313702594230}
     m_Modifications:
+    - target: {fileID: 1375948406800610896, guid: 7d0d79e6fac427040995492c06c9a841, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375948406800610896, guid: 7d0d79e6fac427040995492c06c9a841, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375948406800610896, guid: 7d0d79e6fac427040995492c06c9a841, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375948406800610896, guid: 7d0d79e6fac427040995492c06c9a841, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5319453296586311802, guid: 7d0d79e6fac427040995492c06c9a841, type: 3}
+      propertyPath: pattern
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7628588319347601840, guid: 7d0d79e6fac427040995492c06c9a841, type: 3}
       propertyPath: m_Name
       value: targetSphere (1)

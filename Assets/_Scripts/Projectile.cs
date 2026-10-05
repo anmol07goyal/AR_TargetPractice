@@ -19,7 +19,8 @@ public class Projectile : MonoBehaviour
         if (!collision.gameObject.CompareTag("Target"))
             return;
 
-        collision.gameObject.SetActive(false);
+        if (collision.gameObject.TryGetComponent<MovingTarget>(out MovingTarget target))
+            target.ShowParticles();
 
         GameManager.Instance.UpdateScore();
     }
