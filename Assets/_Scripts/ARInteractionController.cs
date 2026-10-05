@@ -9,14 +9,16 @@ public class ARInteractionController : MonoBehaviour
     [Header("References")]
     [SerializeField] private Camera arCamera;
     [SerializeField] private ARRaycastManager raycastManager;
+    [SerializeField] private ARPlaneManager planeManager;
 
     [Header("Spawn Settings")]
-    [SerializeField] private GameObject cubePrefab;
+    [SerializeField] private GameObject baseArena;
+    private GameObject spawnedObject;
 
     [Header("Shoot Settings")]
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float launchVelocity = 15f;
-    [SerializeField] private LayerMask cubeLayer; // Layer assigned to cubes
+    [SerializeField] private LayerMask cubeLayer;
 
     private static List<ARRaycastHit> arHits = new List<ARRaycastHit>();
 
@@ -26,6 +28,8 @@ public class ARInteractionController : MonoBehaviour
             arCamera = Camera.main;
         if (raycastManager == null)
             raycastManager = FindAnyObjectByType<ARRaycastManager>();
+        if (planeManager == null)
+            planeManager = FindAnyObjectByType<ARPlaneManager>();
     }
 
     private void Update()
@@ -52,30 +56,28 @@ public class ARInteractionController : MonoBehaviour
     {
         Ray ray = arCamera.ScreenPointToRay(screenPosition);
 
-        // 1. PRIORITY CHECK: Did we tap an existing cube?
-        if (Physics.Raycast(ray, out var hitInfo, 100f, cubeLayer))
-        {
-            // Direct hit on a cube -> Shoot projectile towards it
-            ShootAtTarget(ray.direction);
-            return;
-        }
-
-        // 2. FALLBACK CHECK: Did we tap an empty area on an AR Plane?
         if (raycastManager.Raycast(screenPosition, arHits, TrackableType.PlaneWithinPolygon))
         {
             Pose hitPose = arHits[0].pose;
-            Instantiate(cubePrefab, hitPose.position, hitPose.rotation);
+
+            if (spawnedObject == null)
+            {
+                spawnedObject = Instantiate(baseArena, hitPose.position, hitPose.rotation);
+                StopPlaneDetection();
+                //spawnedObject.transform.LookAt(arCamera.transform.position); // Make the cube face the camera
+            }
         }
     }
 
-    private void ShootAtTarget(Vector3 direction)
+    private void StopPlaneDetection()
     {
-        Vector3 origin = arCamera.transform.position + (arCamera.transform.forward * 0.2f);
-        GameObject projectile = Instantiate(projectilePrefab, origin, Quaternion.LookRotation(direction));
-        
-        if (projectile.TryGetComponent<Rigidbody>(out var rb))
+        if (planeManager == null && spawnedObject == null)
+            return;
+
+        planeManager.enabled = false;
+        foreach (var plane in planeManager.trackables)
         {
-            rb.linearVelocity = direction * launchVelocity;
+            plane.gameObject.SetActive(false);
         }
     }
 }
