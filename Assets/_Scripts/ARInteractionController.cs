@@ -18,7 +18,6 @@ public class ARInteractionController : MonoBehaviour
     [Header("Shoot Settings")]
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float launchVelocity = 15f;
-    [SerializeField] private LayerMask cubeLayer;
 
     private static List<ARRaycastHit> arHits = new List<ARRaycastHit>();
 
@@ -59,25 +58,13 @@ public class ARInteractionController : MonoBehaviour
         if (raycastManager.Raycast(screenPosition, arHits, TrackableType.PlaneWithinPolygon))
         {
             Pose hitPose = arHits[0].pose;
+            var position = hitPose.position + (Vector3.up * 0.25f);
 
             if (spawnedObject == null)
             {
-                spawnedObject = Instantiate(baseArena, hitPose.position, hitPose.rotation);
-                StopPlaneDetection();
-                //spawnedObject.transform.LookAt(arCamera.transform.position); // Make the cube face the camera
+                spawnedObject = Instantiate(baseArena, position, hitPose.rotation);
+                GameManager.Instance.ArenaStable();
             }
-        }
-    }
-
-    private void StopPlaneDetection()
-    {
-        if (planeManager == null && spawnedObject == null)
-            return;
-
-        planeManager.enabled = false;
-        foreach (var plane in planeManager.trackables)
-        {
-            plane.gameObject.SetActive(false);
         }
     }
 }

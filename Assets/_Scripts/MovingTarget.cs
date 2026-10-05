@@ -16,6 +16,12 @@ public class MovingTarget : MonoBehaviour
 
     private Vector3 originPosition;
     private float randomOffset;
+    private Camera mainCam;
+
+    private void Awake()
+    {
+        mainCam = Camera.main;
+    }
 
     private void Start()
     {
@@ -51,6 +57,25 @@ public class MovingTarget : MonoBehaviour
                 transform.position = originPosition + new Vector3(xCircle, 0f, zCircle);
                 break;
         }
+
+        transform.LookAt(mainCam.transform.position, Vector3.up);
+        //LookAtCamera();
+    }
+
+    private void LookAtCamera()
+    {
+        // Make the target face the camera/player
+        /*
+        if (mainCam != null)
+        {
+            Vector3 directionToCamera = mainCam.transform.position - transform.position;
+            directionToCamera.y = 0; // Keep only horizontal rotation
+            if (directionToCamera.sqrMagnitude > 0.001f)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(directionToCamera);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+            }
+        }*/
     }
 
     public void StopMoving()

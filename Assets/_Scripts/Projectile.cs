@@ -20,5 +20,7 @@ public class Projectile : MonoBehaviour
             return;
 
         collision.gameObject.SetActive(false);
+
+        GameManager.Instance.UpdateScore();
     }
 }
